@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright © 2018 organization waynechu
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package cn.waynechu.bootstarter.dynamicdatasource.config;
 
 import lombok.Data;
@@ -23,8 +24,48 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.*;
-import static com.alibaba.druid.pool.DruidAbstractDataSource.*;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.ASYNC_INIT;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.CLEAR_FILTERS_ENABLE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.FAIL_FAST;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.FILTERS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.INITIAL_SIZE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.INIT_CONNECTION_SQLS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.INIT_GLOBAL_VARIANTS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.INIT_VARIANTS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.KEEP_ALIVE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.KILL_WHEN_SOCKET_READ_TIMEOUT;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.MAX_ACTIVE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.MAX_EVICTABLE_IDLE_TIME_MILLIS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.MAX_POOL_PREPARED_STATEMENT_PER_CONNECTION_SIZE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.MAX_WAIT;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.MAX_WAIT_THREAD_COUNT;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.MIN_EVICTABLE_IDLE_TIME_MILLIS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.MIN_IDLE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.NOT_FULL_TIMEOUT_RETRY_COUNT;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.PHY_TIMEOUT_MILLIS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.POOL_PREPARED_STATEMENTS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.RESET_STAT_ENABLE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.STAT_LOG_SLOW_SQL;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.STAT_MERGE_SQL;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.STAT_SLOW_SQL_MILLIS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.STAT_SQL_MAX_SIZE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.TEST_ON_BORROW;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.TEST_WHILE_IDLE;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.TIME_BETWEEN_EVICTION_RUNS_MILLIS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.TIME_BETWEEN_LOG_STATS_MILLIS;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.USE_GLOBAL_DATA_SOURCE_STAT;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.USE_UNFAIR_LOCK;
+import static cn.waynechu.bootstarter.dynamicdatasource.constant.DruidConst.VALIDATION_QUERY;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_INITIAL_SIZE;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_MAX_ACTIVE_SIZE;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_MAX_EVICTABLE_IDLE_TIME_MILLIS;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_MAX_WAIT;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_MIN_EVICTABLE_IDLE_TIME_MILLIS;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_MIN_IDLE;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_PHY_TIMEOUT_MILLIS;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_TEST_ON_BORROW;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_TIME_BETWEEN_EVICTION_RUNS_MILLIS;
+import static com.alibaba.druid.pool.DruidAbstractDataSource.DEFAULT_WHILE_IDLE;
 
 /**
  * Druid数据源配置

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright © 2018 organization waynechu
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package cn.waynechu.bootstarter.dynamicdatasource.config.stat;
 
 import com.alibaba.druid.filter.config.ConfigFilter;
@@ -109,7 +110,6 @@ public class DruidFilterConfiguration {
         filter.setConfig(wallConfig);
         return filter;
     }
-
 
     private static final String FILTER_STAT_PREFIX = "spring.datasource.dynamic.druid.filter.stat";
     private static final String FILTER_CONFIG_PREFIX = "spring.datasource.dynamic.druid.filter.config";

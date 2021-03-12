@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright © 2018 organization waynechu
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,9 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package cn.waynechu.bootstarter.dynamicdatasource.annotion;
 
-import java.lang.annotation.*;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * 声明式动态数据源
